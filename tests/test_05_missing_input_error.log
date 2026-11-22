@@ -1,0 +1,9 @@
+Secure Configurable Linux Shell
+Input/output redirection: <, >, >> | Built-ins: cd, exit
+io-shell> [process] shell PID 4710 started child PID 4711
+Input redirection failed for 'missing.txt': No such file or directory
+[process] child PID 4711 exited with status 126
+io-shell> [process] shell PID 4710 started child PID 4712
+still-running
+[process] child PID 4712 exited with status 0
+io-shell> Shell closed.

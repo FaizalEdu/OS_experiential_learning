@@ -1,0 +1,47 @@
+INPUT/OUTPUT REDIRECTION SHELL - TEST SUMMARY
+Passed: 9 / 9
+
+PASS: Output redirection truncates and writes to a file
+Expected: output.txt contains alpha followed by a newline
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4702 started child PID 4703 | [process] child PID 4703 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_01_output_redirection.log
+
+PASS: Append redirection preserves existing file content
+Expected: output.txt contains old and new on separate lines
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4704 started child PID 4705 | [process] child PID 4705 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_02_append_redirection.log
+
+PASS: Input redirection supplies a file to standard input
+Expected: wc reports 2 lines
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4706 started child PID 4707 | 2 | [process] child PID 4707 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_03_input_redirection.log
+
+PASS: Input and output redirection work in one command
+Expected: upper.txt contains FIRST and SECOND in uppercase
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4708 started child PID 4709 | [process] child PID 4709 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_04_combined_redirection.log
+
+PASS: Missing input file reports an error and shell continues
+Expected: Clear input-file error followed by still-running
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4710 started child PID 4711 | Input redirection failed for 'missing.txt': No such file or directory | [process] child PID 4711 exited with status 126 | io-shell> [process] shell PID 4710 started child PID 4712 | still-running | [process] child PID 4712 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_05_missing_input_error.log
+
+PASS: Directory used as an output file is rejected
+Expected: Output redirection error reports Is a directory
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4713 started child PID 4714 | Output redirection failed for 'existing_dir': Is a directory | [process] child PID 4714 exited with status 126 | io-shell> Shell closed.
+Log: tests/test_06_output_open_error.log
+
+PASS: Missing output filename is rejected
+Expected: Incomplete redirection error followed by still-running
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> Input rejected: invalid or incomplete redirection syntax. | io-shell> [process] shell PID 4715 started child PID 4716 | still-running | [process] child PID 4716 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_07_incomplete_redirection.log
+
+PASS: Quoted argument containing spaces is preserved with redirection
+Expected: quoted.txt contains hello world
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4717 started child PID 4718 | [process] child PID 4718 exited with status 0 | io-shell> Shell closed.
+Log: tests/test_08_quoted_argument.log
+
+PASS: Read-only file produces a permission error for an unprivileged user
+Expected: Output redirection reports Permission denied and shell remains usable
+Actual: Secure Configurable Linux Shell | Input/output redirection: <, >, >> | Built-ins: cd, exit | io-shell> [process] shell PID 4719 started child PID 4720 | Output redirection failed for 'read_only.txt': Permission denied | [process] child PID 4720 exited with status 126 | io-shell> Shell closed.
+Log: tests/test_09_permission_error.log

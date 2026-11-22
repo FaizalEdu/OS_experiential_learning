@@ -1,0 +1,5 @@
+Secure Configurable Linux Shell
+Input/output redirection: <, >, >> | Built-ins: cd, exit
+io-shell> [process] shell PID 4702 started child PID 4703
+[process] child PID 4703 exited with status 0
+io-shell> Shell closed.

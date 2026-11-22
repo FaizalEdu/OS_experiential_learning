@@ -1,0 +1,7 @@
+Secure Configurable Linux Shell
+Input/output redirection: <, >, >> | Built-ins: cd, exit
+io-shell> Input rejected: invalid or incomplete redirection syntax.
+io-shell> [process] shell PID 4715 started child PID 4716
+still-running
+[process] child PID 4716 exited with status 0
+io-shell> Shell closed.

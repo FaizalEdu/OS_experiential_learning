@@ -1,0 +1,9 @@
+Build verification for os_io_redirection_shell.c
+Compiler:
+gcc (Debian 14.2.0-19) 14.2.0
+
+Command:
+gcc -std=c11 -Wall -Wextra -Wpedantic -Werror -O2 os_io_redirection_shell.c -o os_io_redirection_shell
+
+Result:
+Compilation completed successfully with -Wall -Wextra -Wpedantic -Werror enabled. No compiler warnings or errors were emitted.

@@ -1,0 +1,5 @@
+os_io_redirection_shell
+*.o
+*.out
+*.tmp
+__pycache__/

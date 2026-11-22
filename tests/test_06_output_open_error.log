@@ -1,0 +1,6 @@
+Secure Configurable Linux Shell
+Input/output redirection: <, >, >> | Built-ins: cd, exit
+io-shell> [process] shell PID 4713 started child PID 4714
+Output redirection failed for 'existing_dir': Is a directory
+[process] child PID 4714 exited with status 126
+io-shell> Shell closed.
